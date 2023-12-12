@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeLlevoApp</title>
+    <!-- Agrega el enlace a Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: url("imagenes/fondo.jpg") center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para legibilidad del texto */
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .carousel-section {
+            text-align: center;
+            margin-top: 1.5px;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            width: 80%; /* Ajusta el ancho del carrusel según tus necesidades */
+            margin: 0 auto;
+        }
+
+        .swiper-slide img {
+            width: 30% !important;
+            height: auto !important;
+        }
+
+        .download-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px; /* Ajusta el margen superior según tus necesidades */
+        }
+
+        .qr-code {
+            text-align: center;
+        }
+
+        .qr-code img {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .qr-code {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .qr-code img {
+                max-width: 300px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para legibilidad del texto */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="imagenes/duocuc.png" alt="Logo de tu empresa">
+        <h1>Te Llevo App</h1>
+        <p>¡Descarga nuestra increíble aplicación y llega seguro a casa después de clases!</p>
+    </header>
+
+    <section class="carousel-section">
+        <h2>Descripción</h2>
+        <p>Te Llevo App conecta a los estudiantes de Duoc UC que comparten destinos similares.
+             Si eres conductor y estás dispuesto a ayudar a tus compañeros.
+             Simplemente publica tu destino y horario. 
+             Si estás buscando un viaje, encuentra fácilmente a alguien que comparta tu ruta</p>
+
+        <div class="carousel-container swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="imagenes/login.jpeg" alt="Slide 1"></div>
+                <div class="swiper-slide"><img src="imagenes/usurio.jpeg" alt="Slide 2"></div>
+                <div class="swiper-slide"><img src="imagenes/mapa.png" alt="Slide 3"></div>
+            </div>
+          
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Descargar la Aplicación</h2>
+        <div class="download-links">
+            <div class="qr-code" id="qr-code">
+                <img src="imagenes/yes.png" alt="Código QR">
+            </div>
+            <a id="android-link" href="https://drive.google.com/file/d/1IZN2OKcT01mT3Y-6ehcv8bjoiFCZsS_d/view?usp=drive_link"
+                target="_blank">Descargar para Android</a>
+            <a id="ios-link" href="" target="_blank">Descargar para iOS</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas o comentarios? Contáctanos:</p>
+        <p>Email: contacto@tellevoapp.cl</p>
+        <p>Teléfono: +123 456 7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Te Llevo App</p>
+    </footer>
+
+    <!-- Swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1, 
+                spaceBetween: 10, 
+                loop: true, 
+                pagination: {
+                    el: '.swiper-pagination', 
+                    clickable: true, 
+                },
+            });
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            //Detectar el tipo de dispositivo
+            function detectarDispositivo() {
+                var esCelular = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                var androidLink = document.getElementById('android-link');
+                var iosLink = document.getElementById('ios-link');
+                var qrCode = document.getElementById('qr-code');
+
+                if (esCelular) {
+                    androidLink.style.display = 'block';
+                    iosLink.style.display = 'none';
+                    qrCode.style.display = 'none';
+                } else {
+                    androidLink.style.display = 'none';
+                    iosLink.style.display = 'none';
+                    qrCode.style.display = 'block';
+                }
+            }
+
+            detectarDispositivo();
+        });
+    </script>
+
+</body>
+
+</html>
